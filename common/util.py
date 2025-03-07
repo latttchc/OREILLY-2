@@ -60,7 +60,7 @@ def most_similar(query, word_to_id, id_to_word, word_matrix, top=5):
         similarity[i] = cos_similarity(word_matrix[i], query_vec)
 
     count = 0
-    for i in (-1 * similarity).argsort():
+    for i in (-1 * similarity).argsort(): # argsort() => Numpy配列の要素を小さい順にsort
         if id_to_word[i] == query:
             continue
         print(' %s: %s' % (id_to_word[i], similarity[i]))
